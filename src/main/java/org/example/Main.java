@@ -4,12 +4,13 @@ import org.example.classes.ComplexTaskExecutor;
 
 public class Main {
     public static void main(String[] args) {
-        ComplexTaskExecutor taskExecutor = new ComplexTaskExecutor(5);
-
         Runnable testRunnable = () -> {
-            System.out.println(Thread.currentThread().getName() + " started the test");
+            System.out.println(Thread.currentThread().getName() + " начал тест");
+
+            ComplexTaskExecutor taskExecutor = new ComplexTaskExecutor(5);
             taskExecutor.executeTasks();
-            System.out.println(Thread.currentThread().getName() + " completed the test");
+
+            System.out.println(Thread.currentThread().getName() + " прошел тест");
         };
 
         Thread thread1 = new Thread(testRunnable, "TestThread-1");

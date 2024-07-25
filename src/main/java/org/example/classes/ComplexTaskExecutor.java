@@ -1,7 +1,6 @@
 package org.example.classes;
 
 import java.util.concurrent.*;
-import java.util.concurrent.TimeUnit;
 
 public class ComplexTaskExecutor {
     private final int numberOfTasks;
@@ -10,7 +9,7 @@ public class ComplexTaskExecutor {
 
     public ComplexTaskExecutor(int numberOfTasks) {
         this.numberOfTasks = numberOfTasks;
-        this.barrier = new CyclicBarrier(numberOfTasks, () -> System.out.println("All tasks completed. Combining results..."));
+        this.barrier = new CyclicBarrier(numberOfTasks, () -> System.out.println("Задачи закончились. Объединение результатов..."));
         this.executorService = Executors.newFixedThreadPool(numberOfTasks);
     }
 

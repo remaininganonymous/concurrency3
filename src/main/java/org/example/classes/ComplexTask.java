@@ -13,9 +13,9 @@ public class ComplexTask {
         Random random = new Random();
         int duration = random.nextInt(3000);
         try {
-            System.out.println("Task " + taskId + " is being executed");
+            System.out.println("Задача " + taskId + " выполняется");
             Thread.sleep(duration);
-            System.out.println("Task " + taskId + " completed");
+            System.out.println("Задача " + taskId + " выполнена");
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
